@@ -1,0 +1,35 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <a class="navbar-brand" href="/">BLOGGER</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/about">HAKKIMIZDA</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/articles">MAKALELER</a>
+        </li>
+      </ul>
+      {% if request.user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href="/articles/dashboard">KONTROL PANELİ</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/user/logout">ÇIKIŞ YAP</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/user/register">KAYIT OL</a>
+      </li>
+      {% else %}
+      <li class="nav-item active">
+        <a class="nav-link" href="/user/register">KAYIT OL</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/user/login">GİRİŞ YAP</a>
+      </li>
+      {% endif %}
+    
+    </div>
+  </nav>

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div style="margin-top: 100px;" class="jumbotron text-center">
+      <h1>BLOGGER</h1>
+      <p class="lead">BURASI BİR BLOG SAYFASIDIR
+      </p>
+</div>
+<p>
+
+      {% if request.user.is_authenticated %}
+      GİRİŞ YAPILMIŞ,{{request.user.username}}
+        
+      {% else %}
+      GİRİŞ YAPILMAMIŞ
+        
+      {% endif %}
+          
+        </p>
+  
+{% endblock body %}
